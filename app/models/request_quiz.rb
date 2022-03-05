@@ -1,0 +1,2 @@
+class RequestQuiz < ApplicationRecord
+end
