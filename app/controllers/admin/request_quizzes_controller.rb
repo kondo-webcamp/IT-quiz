@@ -6,4 +6,10 @@ class Admin::RequestQuizzesController < ApplicationController
   def show
     @request_quiz = RequestQuiz.find(params[:id])
   end
+
+  def destroy
+    @request_quiz = RequestQuiz.find(params[:id])
+    @request_quiz.destroy
+    redirect_to new_admin_session_path
+  end
 end
