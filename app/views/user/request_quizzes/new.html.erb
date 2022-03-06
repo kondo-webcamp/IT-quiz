@@ -1,1 +1,41 @@
 ⑧クイズ作成(request_quizzes/new)
+
+<%= form_with model: @request_quiz,url: user_request_quizzes_path,method: :post, local: true do |f| %>
+  <div>
+    <%= f.label :'問題' %>
+    <%= f.text_field :question %>
+  </div>
+
+  <div>
+    <%= f.label :'答え' %>
+    <%= f.text_field :answer %>
+  </div>
+
+  <div>
+    <%= f.label :'選択肢ア' %>
+    <%= f.text_field :choices_first %>
+  </div>
+
+  <div>
+    <%= f.label :'選択肢イ' %>
+    <%= f.text_field :choices_second %>
+  </div>
+
+  <div>
+    <%= f.label :'選択肢ウ' %>
+    <%= f.text_field :choices_third %>
+  </div>
+
+  <div>
+    <%= f.label :'選択肢エ' %>
+    <%= f.text_field :choices_fourth %>
+  </div>
+
+  <div>
+    <%= f.label :'解説' %>
+    <%= f.text_field :explanation %>
+  </div>
+
+  <%= f.submit '作成' %>
+
+<% end %>

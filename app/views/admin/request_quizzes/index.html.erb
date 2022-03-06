@@ -1,1 +1,8 @@
 ⑫メニュー画面(admin/request_quizzes/index)
+
+<% @request_quizzes.each do |request_quiz|%>
+  <div>
+    <%= request_quiz.id %>
+    <%= link_to request_quiz.question,admin_request_quiz_path(request_quiz.id) %>
+  </div>
+<% end %>
