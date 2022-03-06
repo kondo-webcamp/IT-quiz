@@ -1,1 +1,8 @@
 ⑯クイズ一覧(admin/quizzes/index)
+
+<% @quizzes.each do |quiz|%>
+  <div>
+    <%= quiz.id %>
+    <%= link_to quiz.question,edit_admin_quiz_path(quiz.id) %>
+  </div>
+<% end %>
