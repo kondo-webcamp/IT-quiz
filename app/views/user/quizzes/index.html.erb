@@ -5,23 +5,30 @@
     第1問.<%= quiz.question %>
   </div>
 
-  <div>
-    <button>ア</button>
+  <div class="hidden_box">
+    <label for="label1">ア</label>
     <%= quiz.choices_first %>
   </div>
 
-  <div>
-    <button>イ</button>
+  <div class="hidden_box">
+    <label for="label1">イ</label>
     <%= quiz.choices_second %>
   </div>
 
-  <div>
-    <button>ウ</button>
+  <div class="hidden_box">
+    <label for="label1">ウ</label>
     <%= quiz.choices_third %>
   </div>
 
-  <div>
-    <button>エ</button>
+  <div class="hidden_box">
+    <label for="label1">エ</label>
     <%= quiz.choices_fourth %>
-  </div>
+
+
+     <input type="checkbox" id="label1" class="switch" />
+     <div class="hidden_show">
+      <h4>正解：<%= quiz.answer %></h4>
+      <div>解説：<%= quiz.explanation %></div>
+     </div>
+   </div>
 <% end %>
