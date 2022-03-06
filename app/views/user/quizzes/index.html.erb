@@ -1,1 +1,27 @@
-⑥クイズ結果(quizzes/index)
+⑥クイズ画面(quizzes/index)
+
+<% @quizzes.each do |quiz| %>
+  <div>
+    第1問.<%= quiz.question %>
+  </div>
+
+  <div>
+    <button>ア</button>
+    <%= quiz.choices_first %>
+  </div>
+
+  <div>
+    <button>イ</button>
+    <%= quiz.choices_second %>
+  </div>
+
+  <div>
+    <button>ウ</button>
+    <%= quiz.choices_third %>
+  </div>
+
+  <div>
+    <button>エ</button>
+    <%= quiz.choices_fourth %>
+  </div>
+<% end %>

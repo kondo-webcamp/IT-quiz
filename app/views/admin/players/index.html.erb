@@ -1,1 +1,9 @@
 ⑬ユーザー一覧(admin/players/index)
+
+<% @players.each do |player|%>
+  <div>
+
+    <%= player.player_name %>
+    <%= player.email %>
+  </div>
+<% end %>
