@@ -32,6 +32,7 @@
      </div>
    </div>
 <% end %>
+<%= paginate @quizzes %>
 
-<%= link_to "次の問題へ", user_quizzes_path %>
+<%#= link_to "次の問題へ", user_quizzes_path %>
 <%= link_to "結果を見る", new_user_quiz_path %>
