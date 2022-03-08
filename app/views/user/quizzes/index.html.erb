@@ -1,38 +1,72 @@
-⑥クイズ画面(quizzes/index)
+⑥クイズ画面(@quizzes/index)
 
-<% @quizzes.each do |quiz| %>
+<% if @count == 10 %>
   <div>
-    第1問.<%= quiz.question %>
+    <strong>第<%= @count %>問</strong>
+    <div><%= @quiz.question %></div>
   </div>
 
   <div class="hidden_box">
     <label for="label1">ア</label>
-    <%= quiz.choices_first %>
+    <%= @quiz.choices_first %>
   </div>
 
   <div class="hidden_box">
     <label for="label1">イ</label>
-    <%= quiz.choices_second %>
+    <%= @quiz.choices_second %>
   </div>
 
   <div class="hidden_box">
     <label for="label1">ウ</label>
-    <%= quiz.choices_third %>
+    <%= @quiz.choices_third %>
   </div>
 
   <div class="hidden_box">
     <label for="label1">エ</label>
-    <%= quiz.choices_fourth %>
+    <%= @quiz.choices_fourth %>
 
+    <input type="checkbox" id="label1" class="switch" />
+      <div class="hidden_show">
+        <h4>正解：<%= @quiz.answer %></h4>
+        <div>解説：<%= @quiz.explanation %></div>
+      </div>
+  </div>
 
-     <input type="checkbox" id="label1" class="switch" />
-     <div class="hidden_show">
-      <h4>正解：<%= quiz.answer %></h4>
-      <div>解説：<%= quiz.explanation %></div>
-     </div>
-   </div>
+  <%= link_to "結果を見る", new_user_quiz_path %>
+
+<%else%>
+
+  <div>
+    <strong>第<%= @count %>問</strong>
+    <div><%= @quiz.question %></div>
+  </div>
+
+  <div class="hidden_box">
+    <label for="label1">ア</label>
+    <%= @quiz.choices_first %>
+  </div>
+
+  <div class="hidden_box">
+    <label for="label1">イ</label>
+    <%= @quiz.choices_second %>
+  </div>
+
+  <div class="hidden_box">
+    <label for="label1">ウ</label>
+    <%= @quiz.choices_third %>
+  </div>
+
+  <div class="hidden_box">
+    <label for="label1">エ</label>
+    <%= @quiz.choices_fourth %>
+
+    <input type="checkbox" id="label1" class="switch" />
+      <div class="hidden_show">
+        <h4>正解：<%= @quiz.answer %></h4>
+        <div>解説：<%= @quiz.explanation %></div>
+      </div>
+  </div>
+
+<%= link_to "次の問題へ", user_quizzes_path(count: @count, used_quizes: @used_quizes) %>
+
 <% end %>
-<%= paginate @quizzes %>
-
-<%#= link_to "次の問題へ", user_quizzes_path %>
-<%= link_to "結果を見る", new_user_quiz_path %>

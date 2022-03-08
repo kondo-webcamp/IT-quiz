@@ -1,2 +1,7 @@
 ③クイズ結果(quizzes/new)
-<%= link_to "クイズを作成する", new_user_request_quiz_path %>
+
+<div>あなたの合計点数は...</div>
+
+<% if @player.score == 10 %>
+ <%= link_to "クイズを作成する", new_user_request_quiz_path %>
+<% end %>
