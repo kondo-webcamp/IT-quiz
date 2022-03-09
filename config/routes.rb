@@ -15,6 +15,7 @@ namespace :admin do
     resources :quizzes
     resources :request_quizzes
   end
+  patch "quiz/:id/score_update" => "user/players#score_update", as: "score_update"
 
 namespace :user do
     resources :players

@@ -7,32 +7,32 @@
   </div>
 
   <div class="hidden_box">
-    <label for="label1">ア</label>
+    <%= link_to 'ア', score_update_path(@quiz, answer: "ア"), method: :patch, remote: true %>
     <%= @quiz.choices_first %>
   </div>
 
   <div class="hidden_box">
-    <label for="label1">イ</label>
+    <%= link_to 'イ', score_update_path(@quiz, answer: "イ"), method: :patch, remote: true %>
     <%= @quiz.choices_second %>
   </div>
 
   <div class="hidden_box">
-    <label for="label1">ウ</label>
+    <%= link_to 'ウ', score_update_path(@quiz, answer: "ウ"), method: :patch, remote: true %>
     <%= @quiz.choices_third %>
   </div>
 
   <div class="hidden_box">
-    <label for="label1">エ</label>
+    <%= link_to 'エ', score_update_path(@quiz, answer: "エ"), method: :patch, remote: true %>
     <%= @quiz.choices_fourth %>
 
+    <label for="label1">答えと解説を見る</label>
     <input type="checkbox" id="label1" class="switch" />
       <div class="hidden_show">
         <h4>正解：<%= @quiz.answer %></h4>
         <div>解説：<%= @quiz.explanation %></div>
+        <%= link_to "結果を見る", new_user_quiz_path, onclick: 'total_score()' %>
       </div>
   </div>
-
-  <%= link_to "結果を見る", new_user_quiz_path %>
 
 <% else %>
 
@@ -42,31 +42,32 @@
   </div>
 
   <div class="hidden_box">
-    <label for="label1">ア</label>
+    <%= link_to 'ア', score_update_path(@quiz, answer: "ア"), method: :patch, remote: true %>
     <%= @quiz.choices_first %>
   </div>
 
   <div class="hidden_box">
-    <label for="label1">イ</label>
+    <%= link_to 'イ', score_update_path(@quiz, answer: "イ"), method: :patch, remote: true %>
     <%= @quiz.choices_second %>
   </div>
 
   <div class="hidden_box">
-    <label for="label1">ウ</label>
+    <%= link_to 'ウ', score_update_path(@quiz, answer: "ウ"), method: :patch, remote: true %>
     <%= @quiz.choices_third %>
   </div>
 
   <div class="hidden_box">
-    <label for="label1">エ</label>
+    <%= link_to 'エ', score_update_path(@quiz, answer: "エ"), method: :patch, remote: true %>
     <%= @quiz.choices_fourth %>
 
+    <label for="label1">答えと解説を見る</label>
     <input type="checkbox" id="label1" class="switch" />
       <div class="hidden_show">
         <h4>正解：<%= @quiz.answer %></h4>
         <div>解説：<%= @quiz.explanation %></div>
+        <%= link_to "次の問題へ", user_quizzes_path(count: @count, quiz: @quiz.id, used_quizzes: @used_quizzes) %>
       </div>
   </div>
 
-<%= link_to "次の問題へ", user_quizzes_path(count: @count, quiz: @quiz.id, used_quizzes: @used_quizzes) %>
 
 <% end %>

@@ -17,11 +17,11 @@ class User::QuizzesController < ApplicationController
       @count = 1
       @quiz = Quiz.find(quiz_all_list.shuffle[0])
       @used_quizzes = @quiz.id
+      current_player.update(score: 0)
     end
+  end
 
-    def new
-      @player = current_player
-    end
-
+  def new
+    @player = current_player
   end
 end
