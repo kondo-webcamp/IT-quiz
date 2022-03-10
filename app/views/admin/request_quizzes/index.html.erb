@@ -1,8 +1,10 @@
-⑫メニュー画面(admin/request_quizzes/index)
+<div class="admin-login-top">
+<h2>ユーザーが新しくクイズを作成した場合、こちらの画面に表示されます。<br>
+    クイズを選択し、内容を確認してください。</h2>
 
 <% @request_quizzes.each do |request_quiz|%>
-  <div>
-    <%= request_quiz.id %>
-    <%= link_to request_quiz.question,admin_request_quiz_path(request_quiz.id) %>
+  <div class="admin-login-space">
+    <%= link_to request_quiz.question.truncate(40, omission: '...'),admin_request_quiz_path(request_quiz.id) %>
   </div>
 <% end %>
+</div>

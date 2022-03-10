@@ -1,4 +1,5 @@
-⑭〇〇さんより申請(admin/request_quizzes/show)
+<div class="admin-login-top">
+  <h3>クイズの内容を確認し、問題がなければ<%= link_to "クイズ作成", new_admin_quiz_path %>から作成してください</h3>
 
 <div>問題：<%= @request_quiz.question %></div>
 <div>答え：<%= @request_quiz.answer %></div>
@@ -10,3 +11,4 @@
 
 <%= link_to "クイズ作成", new_admin_quiz_path %>
 <%= link_to "確認済", admin_request_quiz_path(@request_quiz.id),method: :delete, "data-confirm" => "これ以降表示できなくなります。きちんと確認した上で'OK'を押してください。" %>
+</div>

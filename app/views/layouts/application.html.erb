@@ -8,41 +8,47 @@
     <%= include_gon %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "homes" %>
   </head>
 
   <body>
     <header>
-    <% if player_signed_in? %>
-      <li>
-        <%= link_to "マイページ", edit_user_player_path(current_player.id) %>
-      </li>
-      <li>
-        <%= link_to "ランキング", user_players_path %>
-      </li>
-      <li>
-        <%= link_to "ログアウト", destroy_player_session_path, method: :delete %>
-      </li>
-    <% elsif admin_signed_in? %>
-      <li>
-        <%= link_to "クイズ作成", new_admin_quiz_path %>
-      </li>
-      <li>
-        <%= link_to "クイズ一覧", admin_quizzes_path %>
-      </li>
-      <li>
-        <%= link_to "ユーザー一覧", admin_players_path %>
-      </li>
-      <li>
-        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "新規登録", new_player_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_player_session_path %>
-      </li>
-    <% end %>
+       <h1 class="header-logo"><a class="header-link" href="/">studies IT</a></h1>
+         <nav>
+            <ul>
+            <% if player_signed_in? %>
+              <li>
+                <%= link_to "マイページ", edit_user_player_path(current_player.id) %>
+              </li>
+              <li>
+                <%= link_to "ランキング", user_players_path %>
+              </li>
+              <li>
+                <%= link_to "ログアウト", destroy_player_session_path, method: :delete %>
+              </li>
+            <% elsif admin_signed_in? %>
+              <li>
+                <%= link_to "クイズ作成", new_admin_quiz_path, class: 'admin-header' %>
+              </li>
+              <li>
+                <%= link_to "クイズ一覧", admin_quizzes_path, class: 'admin-header' %>
+              </li>
+              <li>
+                <%= link_to "ユーザー一覧", admin_players_path, class: 'admin-header' %>
+              </li>
+              <li>
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'admin-header' %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to "新規登録", new_player_registration_path %>
+              </li>
+              <li>
+                <%= link_to "ログイン", new_player_session_path %>
+              </li>
+            <% end %>
+            </ul>
+         </nav>
   </header>
     <%= yield %>
   </body>
