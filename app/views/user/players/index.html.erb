@@ -1,1 +1,11 @@
 ⑦ランキング(players/index)
+
+<% @player_ranks.each.with_index(1) do |player, rank| %>
+    第<%= rank %>位
+    <% if player.image_icon.attached? %>
+      <%= image_tag player.image_icon, size: "60x60" %>
+    <% else %>
+      <%= image_tag '勉強アイコン2.jpeg', size: "60x60" %>
+    <% end %>
+    <%= player.player_name %>
+<% end%>
