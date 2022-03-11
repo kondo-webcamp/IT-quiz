@@ -1,8 +1,14 @@
-⑯クイズ一覧(admin/quizzes/index)
+<div class="admin-login-top">
+  <h3 class="admin-login-space">現在出題しているクイズの一覧を確認することができます</h3>
 
-<% @quizzes.each do |quiz|%>
-  <div>
-    <%= quiz.id %>
-    <%= link_to quiz.question.truncate(20, omission: '...'),edit_admin_quiz_path(quiz.id) %>
+  <div class="quiz-index">
+    <% @quizzes.each do |quiz|%>
+      <div>
+        <%= quiz.id %>
+        <%= link_to quiz.question.truncate(25, omission: '...'),edit_admin_quiz_path(quiz.id) %>
+      </div>
+   <% end %>
+
   </div>
-<% end %>
+  <%= paginate @quizzes %>
+</div>

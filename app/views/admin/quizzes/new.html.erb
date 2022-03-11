@@ -1,41 +1,44 @@
-⑮クイズ作成(admin/quizzes/new)
+<div class="admin-login-top">
+  <h3>クイズを新しく作成できます。<br>ユーザーが作成したクイズもこちらから作成してください。</h3>
+
 
 <%= form_with model: @quiz,url: admin_quizzes_path,method: :post, local: true do |f| %>
   <div>
     <%= f.label :'問題' %>
-    <%= f.text_field :question %>
+    <%= f.text_area :question, :size=>"100x5" %>
   </div>
 
   <div>
     <%= f.label :'答え' %>
-    <%= f.text_field :answer %>
+    <%= f.select :answer, options_for_select([["ア", "ア"], ["イ", "イ"], ["ウ", "ウ"], ["エ", "エ"]]), options = { include_blank: true } %>
   </div>
 
   <div>
     <%= f.label :'選択肢ア' %>
-    <%= f.text_field :choices_first %>
+    <%= f.text_area :choices_first, :size=>"50x2" %>
   </div>
 
   <div>
     <%= f.label :'選択肢イ' %>
-    <%= f.text_field :choices_second %>
+    <%= f.text_area :choices_second, :size=>"50x2" %>
   </div>
 
   <div>
     <%= f.label :'選択肢ウ' %>
-    <%= f.text_field :choices_third %>
+    <%= f.text_area :choices_third, :size=>"50x2" %>
   </div>
 
   <div>
     <%= f.label :'選択肢エ' %>
-    <%= f.text_field :choices_fourth %>
+    <%= f.text_area :choices_fourth, :size=>"50x2" %>
   </div>
 
   <div>
     <%= f.label :'解説' %>
-    <%= f.text_field :explanation %>
+    <%= f.text_area :explanation, :size=>"100x5" %>
   </div>
 
-  <%= f.submit '作成' %>
+  <%= f.submit '作成', class: 'admin-button' %>
 
 <% end %>
+</div>

@@ -4,7 +4,7 @@ class Admin::QuizzesController < ApplicationController
   end
 
   def index
-    @quizzes = Quiz.all
+    @quizzes = Quiz.page(params[:page]).per(10)
   end
 
   def create
