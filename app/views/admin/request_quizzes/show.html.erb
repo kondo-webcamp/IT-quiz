@@ -1,14 +1,28 @@
 <div class="admin-login-top">
   <h3>クイズの内容を確認し、問題がなければ<%= link_to "クイズ作成", new_admin_quiz_path %>から作成してください</h3>
+  <p class="caution">※確認済を押すと、このクイズは表示されなくなりますのでご注意ください。</p>
 
-<div>問題：<%= @request_quiz.question %></div>
-<div>答え：<%= @request_quiz.answer %></div>
-<div>ア：<%= @request_quiz.choices_first %></div>
-<div>イ：<%= @request_quiz.choices_second %></div>
-<div>ウ：<%= @request_quiz.choices_third %></div>
-<div>エ：<%= @request_quiz.choices_fourth %></div>
-<div>解説：<%= @request_quiz.explanation %></div>
+  <div class="quiz-check">
+     <dl>
+        <dt>問題</dt> <dd><%= @request_quiz.question %></dd>
+        <dt>選択肢:ア</dt> <dd><%= @request_quiz.choices_first %></dd>
+        <dt>選択肢:イ</dt> <dd><%= @request_quiz.choices_second %></dd>
+        <dt>選択肢:ウ</dt> <dd><%= @request_quiz.choices_third %></dd>
+        <dt>選択肢:エ</dt> <dd><%= @request_quiz.choices_fourth %></dd>
+        <dt>答え</dt> <dd><%= @request_quiz.answer %></dd>
+        <dt>解説</dt> <dd><%= @request_quiz.explanation %></dd>
+     </dl>
+  </div>
 
-<%= link_to "クイズ作成", new_admin_quiz_path %>
-<%= link_to "確認済", admin_request_quiz_path(@request_quiz.id),method: :delete, "data-confirm" => "これ以降表示できなくなります。きちんと確認した上で'OK'を押してください。" %>
+    <div class="admin-check-quiz">
+      <div>
+        <%= link_to new_admin_quiz_path do %><button class="admin-button space">クイズ作成</button><% end %>
+      </div>
+
+      <div>
+        <%= link_to admin_request_quiz_path(@request_quiz.id),method: :delete, "data-confirm" => "これ以降表示できなくなります。きちんと確認した上で'OK'を押してください。" do %>
+        <button class="admin-button" >確認済</button><% end %>
+      </div>
+    </div>
+
 </div>
