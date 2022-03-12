@@ -1,41 +1,18 @@
-⑰クイズ詳細画面(admin/quizzes/edit)
+<div class="admin-login-top">
+  <h3>クイズ内容を変更することができます</h3>
 
-<%= form_with model: @quiz,url: admin_quiz_path(@quiz.id), method: :patch, local: true do |f| %>
-  <div>
-    <%= f.label :'問題' %>
-    <%= f.text_field :question %>
-  </div>
-
-  <div>
-    <%= f.label :'答え' %>
-    <%= f.text_field :answer %>
-  </div>
-
-  <div>
-    <%= f.label :'選択肢ア' %>
-    <%= f.text_field :choices_first %>
-  </div>
-
-  <div>
-    <%= f.label :'選択肢イ' %>
-    <%= f.text_field :choices_second %>
-  </div>
-
-  <div>
-    <%= f.label :'選択肢ウ' %>
-    <%= f.text_field :choices_third %>
-  </div>
-
-  <div>
-    <%= f.label :'選択肢エ' %>
-    <%= f.text_field :choices_fourth %>
-  </div>
-
-  <div>
-    <%= f.label :'解説' %>
-    <%= f.text_field :explanation %>
-  </div>
-
-  <%= f.submit '変更を保存' %>
-
-<% end %>
+  <%= form_with model: @quiz,url: admin_quiz_path(@quiz.id), method: :patch, local: true do |f| %>
+    <div class="quiz-check">
+      <dl>
+        <dt><%= f.label :'問題' %></dt> <dd><%= f.text_area :question, :size=>"100x5" %></dd>
+        <dt><%= f.label :'答え' %></dt> <dd><%= f.text_field :answer, :size=>"20" %></dd>
+        <dt><%= f.label :'選択肢ア' %></dt> <dd><%= f.text_area :choices_first, :size=>"100x2" %></dd>
+        <dt><%= f.label :'選択肢イ' %></dt> <dd><%= f.text_area :choices_second, :size=>"100x2" %></dd>
+        <dt><%= f.label :'選択肢ウ' %></dt> <dd><%= f.text_area :choices_third, :size=>"100x2" %></dd>
+        <dt><%= f.label :'選択肢エ' %></dt> <dd><%= f.text_area :choices_fourth, :size=>"100x2" %></dd>
+        <dt><%= f.label :'解説' %></dt> <dd><%= f.text_area :explanation, :size=>"100x5" %></dd>
+      </dl>
+    </div>
+    <%= f.submit '変更を保存', class: 'admin-button' %>
+  <% end %>
+</div>
