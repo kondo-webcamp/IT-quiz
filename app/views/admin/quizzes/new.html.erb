@@ -1,44 +1,18 @@
 <div class="admin-login-top">
   <h3>クイズを新しく作成できます。<br>ユーザーが作成したクイズもこちらから作成してください。</h3>
 
-
-<%= form_with model: @quiz,url: admin_quizzes_path,method: :post, local: true do |f| %>
-  <div>
-    <%= f.label :'問題' %>
-    <%= f.text_area :question, :size=>"100x5" %>
-  </div>
-
-  <div>
-    <%= f.label :'答え' %>
-    <%= f.select :answer, options_for_select([["ア", "ア"], ["イ", "イ"], ["ウ", "ウ"], ["エ", "エ"]]), options = { include_blank: true } %>
-  </div>
-
-  <div>
-    <%= f.label :'選択肢ア' %>
-    <%= f.text_area :choices_first, :size=>"50x2" %>
-  </div>
-
-  <div>
-    <%= f.label :'選択肢イ' %>
-    <%= f.text_area :choices_second, :size=>"50x2" %>
-  </div>
-
-  <div>
-    <%= f.label :'選択肢ウ' %>
-    <%= f.text_area :choices_third, :size=>"50x2" %>
-  </div>
-
-  <div>
-    <%= f.label :'選択肢エ' %>
-    <%= f.text_area :choices_fourth, :size=>"50x2" %>
-  </div>
-
-  <div>
-    <%= f.label :'解説' %>
-    <%= f.text_area :explanation, :size=>"100x5" %>
-  </div>
-
-  <%= f.submit '作成', class: 'admin-button' %>
-
-<% end %>
+  <%= form_with model: @quiz,url: admin_quizzes_path,method: :post, local: true do |f| %>
+    <div class="quiz-check">
+      <dl>
+        <dt><%= f.label :'問題' %></dt> <dd><%= f.text_area :question, :size=>"100x5" %></dd>
+        <dt><%= f.label :'答え' %></dt> <dd><%= f.select :answer, options_for_select([["ア", "ア"], ["イ", "イ"], ["ウ", "ウ"], ["エ", "エ"]]), options = { include_blank: true } %></dd>
+        <dt><%= f.label :'選択肢ア' %></dt> <dd><%= f.text_area :choices_first, :size=>"50x2" %></dd>
+        <dt><%= f.label :'選択肢イ' %></dt> <dd><%= f.text_area :choices_second, :size=>"50x2" %></dd>
+        <dt><%= f.label :'選択肢ウ' %></dt> <dd><%= f.text_area :choices_third, :size=>"50x2" %></dd>
+        <dt><%= f.label :'選択肢エ' %></dt> <dd><%= f.text_area :choices_fourth, :size=>"50x2" %></dd>
+        <dt><%= f.label :'解説' %></dt> <dd><%= f.text_area :explanation, :size=>"100x5" %></dd>
+      </dl>
+    <div>
+    <%= f.submit '作成', class: 'admin-button' %>
+  <% end %>
 </div>
