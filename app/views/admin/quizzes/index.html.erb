@@ -3,9 +3,9 @@
 
   <div class="quiz-index">
     <% @quizzes.each do |quiz|%>
-      <div>
+      <div class="quiz-index-adjustment">
         <%= quiz.id %>
-        <%= link_to quiz.question.truncate(25, omission: '...'),edit_admin_quiz_path(quiz.id) %>
+        <%= link_to quiz.question.truncate(47, omission: '...'),edit_admin_quiz_path(quiz.id) %>
       </div>
    <% end %>
 
