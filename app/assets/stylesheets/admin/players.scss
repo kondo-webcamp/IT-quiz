@@ -1,3 +1,25 @@
 // Place all the styles related to the admin/players controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.admin-player-index{
+  display: flex;
+  margin: 12px 0;
+}
+
+.admin-players-title{
+  width: 40%;
+}
+
+.admin-players-name{
+  width: 40%;
+  text-align: center;
+}
+
+.players-email{
+  width: 60%;
+}
+
+.player-email{
+  width: 60%;
+  text-align: center;
+}

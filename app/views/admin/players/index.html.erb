@@ -1,8 +1,17 @@
-⑬ユーザー一覧(admin/players/index)
+<div class="admin-login-top">
+  <h3 class="admin-login-space">登録しているユーザーの名前、メールアドレスを確認できます</h3>
 
-<% @players.each do |player|%>
-  <div>
-    <%= player.player_name %>
-    <%= player.email %>
+  <div class="quiz-index">
+    <div class="admin-player-index">
+      <h5 class="admin-players-title">ユーザーネーム</h5>
+      <h5 class="players-email">メールアドレス</h5>
+    </div>
+    <% @players.each do |player|%>
+      <div class="admin-player-index">
+        <div class="admin-players-name"><%= player.player_name %></div>
+        <div class="player-email"><%= player.email %></div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+  <%= paginate @players %>
+</div>

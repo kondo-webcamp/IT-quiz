@@ -8,7 +8,6 @@
         <%= link_to quiz.question.truncate(47, omission: '...'),edit_admin_quiz_path(quiz.id) %>
       </div>
    <% end %>
-
   </div>
   <%= paginate @quizzes %>
 </div>
