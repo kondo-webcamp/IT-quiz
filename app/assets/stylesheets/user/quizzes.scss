@@ -1,42 +1,27 @@
 // Place all the styles related to the user/quizzes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.hidden_box {
-    margin: 2em 0;
-    padding: 0;
+.answer_box {
+  width: 60%;
+  margin: 20px auto;
+  text-align: left;
 }
 
-/*ボタン装飾*/
-.hidden_box label {
-    padding: 15px;
-    font-weight: bold;
-    border: solid 2px black;
-    border-radius: 10px;
-    cursor :pointer;
-}
-
-/*ボタンホバー時*/
-.hidden_box label:hover {
-    background: #efefef;
-}
-
-/*チェックは見えなくする*/
-.hidden_box input {
+.answer-explanation-show {
     display: none;
 }
 
-/*中身を非表示にしておく*/
-.hidden_box .hidden_show {
-    height: 0;
-    padding: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: 0.5s;
+// 出題画面
+.question{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/*クリックで中身表示*/
-.hidden_box input:checked ~ .hidden_show {
-    padding: 10px 0;
-    height: auto;
-    opacity: 1;
+.select-button {
+  border: 1px solid #000000;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 3px 16px;
+  color: #000000;
 }
