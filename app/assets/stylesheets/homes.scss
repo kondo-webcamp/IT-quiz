@@ -9,3 +9,31 @@
   font-family: serif;
 }
 
+.faq{
+  border: 2px outset #CCCCFF;
+  border-radius: 12px;
+  width: 10%;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.faq-box{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.faq-title{
+  border-bottom: 2px solid #CCCCFF;
+  padding: 24px 0 24px 24px;
+}
+
+.faq-answer{
+  border-bottom: 2px solid #9999CC;
+  padding: 24px 0 24px 24px;
+}
+
+.faq-answer {
+  display: none;
+}
+
+
