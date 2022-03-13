@@ -26,9 +26,10 @@
     <div class="answer-explanation"><label for="label1">答えと解説を見る</label></div>
     <input type="checkbox" id="label1" class="switch" />
       <div class="hidden_show">
-        <h3>正解：<%= @quiz.answer %></h3>
-        <div>解説：<%= @quiz.explanation %></div>
-        <%= link_to "結果を見る", new_user_quiz_path %>
+        <h3 class="answer-title">正解：<%= @quiz.answer %></h3>
+        <div><strong>解説：</strong><%= @quiz.explanation %></div>
+        <div class="next-title">
+          <h4 class="last-title">問題は以上です。お疲れ様でした！</h4><%= link_to "結果を見る", new_user_quiz_path, class: 'next-button' %></div>
       </div>
   </div>
 
@@ -58,13 +59,14 @@
     <%= link_to 'エ', score_update_path(@quiz, answer: "エ"), method: :patch, remote: true, class: 'select-button' %>
     <%= @quiz.choices_fourth %>
 
-    <div class="answer-explanation"><label for="label1" >答えと解説を見る</label></div>
+    <div class="answer-explanation"><label for="label1" >答え & 解説を見る</label></div>
     <input type="checkbox" id="label1" class="switch" />
       <div class="hidden_show">
         <h3 class="answer-title">正解：<%= @quiz.answer %></h3>
-        <div>解説：<%= @quiz.explanation %></div>
-        <%= link_to "次の問題へ", user_quizzes_path(count: @count, quiz: @quiz.id, used_quizzes: @used_quizzes) %>
-      </div>
+        <div><strong>解説：</strong><%= @quiz.explanation %></div>
+        <div class="next-title">
+          <%= link_to "次の問題へ", user_quizzes_path(count: @count, quiz: @quiz.id, used_quizzes: @used_quizzes), class: 'next-button' %></div>
+        </div>
   </div>
 
 
