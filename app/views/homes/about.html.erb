@@ -30,7 +30,24 @@
     </div>
   </div>
 
+  <h4 class="form-title">ここにない質問はこちらからお問い合わせください。</h4>
 
+<div class="form">
+
+<%= form_with model: @inquiry do |f| %>
+  <div class="sign-form">
+    <p class="sign-form-left"><%= f.label :'お名前：' %></p>
+    <p class="inquiry-form-right"><%= f.text_field :name %></p>
+  </div>
+
+  <div class="sign-form">
+    <p class="sign-form-left"><%= f.label :'お問い合わせ内容：' %></p>
+    <p class="inquiry-form-right"><%= f.text_area :messages, :size=>"70x3" %></p>
+  </div>
+
+  <%= f.submit '送信', class: "sign-button" %>
+<% end %>
+</div>
 
 
 

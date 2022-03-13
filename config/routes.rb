@@ -22,5 +22,7 @@ namespace :user do
     resources :quizzes
     resources :request_quizzes
   end
+
+  post 'homes/about', to: 'homes#about', as: 'confirm'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
