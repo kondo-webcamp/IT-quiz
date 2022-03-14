@@ -1,6 +1,8 @@
 // Place all the styles related to the user/quizzes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+//クイズ出題画面
 .hidden_box {
     width: 60%;
     text-align: left;
@@ -62,7 +64,7 @@
     text-align: center;
 }
 
-label {
+.answer-open {
     width: 20%;
     font-weight: bold;
     margin: 0 auto;
@@ -94,4 +96,32 @@ label {
 
 .last-title {
     margin-bottom: 8px;
+}
+
+//クイズ結果画面
+.result {
+    width: 100%;
+    text-align: center;
+    margin-top: 36px;
+}
+
+.player-score {
+
+    font-size: 100px;
+    width: 100%;
+    text-align: center;
+    animation-name: scoreAnime;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes scoreAnime{
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

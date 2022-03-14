@@ -1,9 +1,18 @@
-③クイズ結果(quizzes/new)
+<h4 class="result">あなたの合計点数は...</h4>
+<h1 class="player-score"><%= @player.score %></h1>
 
-<div>あなたの合計点数は...</div>
-<%= @player.score %>です
+<% if @player.score != 10 %>
+  <div class="result">
+    <h3>お疲れ様でした！<br>
+    全問正解しますと、あなただけのオリジナルのクイズを作成することができます。<br>
+    またの挑戦をお待ちしております！</h3>
+  </div>
+  <div class="next-title"><%= link_to 'トップページへ戻る' ,root_path, class: 'next-button' %></div>
+<% end %>
 
 <% if @player.score == 10 %>
-  <div>満点です！おめでとう！クイズを作成することができます</div>
-  <%= link_to "クイズを作成する", new_user_request_quiz_path %>
+  <div class="result">
+    <h3>満点です！おめでとう！<br>全問正解でしたので、あなただけのオリジナルのクイズを作成することができます</h3>
+    <div class="next-title"><%= link_to "クイズを作成する", new_user_request_quiz_path, class: 'next-button' %></div>
+  </div>
 <% end %>
