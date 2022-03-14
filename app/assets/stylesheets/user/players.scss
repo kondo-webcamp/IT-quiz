@@ -1,3 +1,64 @@
 // Place all the styles related to the user/players controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.player-ranking {
+  margin-top: 50px;
+  display: flex;
+}
+
+.number {
+  width: 40%;
+  text-align: right;
+  font-size: 24px;
+  padding-right: 30px;
+}
+
+.ranking {
+  font-size: 30px;
+}
+
+.rank {
+  margin: 20px 0;
+}
+
+.first {
+	color: transparent;
+	background: linear-gradient(0deg, #B67B03 0%, #DAAF08 45%, #FEE9A0 55%, #DAAF08 85%, #B67B03 90% 100%);
+	-webkit-background-clip: text;
+}
+
+.second {
+  color: transparent;
+	background: linear-gradient(0deg, #757575 0%, #9E9E9E 45%, #E8E8E8 55%, #9E9E9E 85%, #757575 90% 100%);
+	-webkit-background-clip: text;
+}
+
+.third {
+  color: transparent;
+	background: repeating-linear-gradient(0deg, #C62828 0.1em, #EF5350 0.2em, #FFEBEE 0.3em, #EF5350 0.4em, #C62828 0.5em);
+	-webkit-background-clip: text;
+}
+
+.player-icon-name {
+  width: 60%;
+  padding-left: 40px;
+}
+
+.icon-name {
+  margin-top: 28px;
+  position: relative;
+}
+
+.player-name {
+  font-size: 24px;
+  font-weight: bold;
+  display: inline;
+  margin-left: 60px;
+  position: absolute;
+  top: 20px;
+}
+
+.icon-circle {
+  border-radius: 50%;
+  border: 2px solid #808080;
+}

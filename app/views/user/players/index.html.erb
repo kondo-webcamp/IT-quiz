@@ -1,11 +1,22 @@
-⑦ランキング(players/index)
+<div class="player-ranking">
+  <div class="number">
+    <h1 class="rank first">1<span class="ranking">位</span></h1>
+    <h1 class="rank second">2<span class="ranking">位</span></h1>
+    <h1 class="rank third">3<span class="ranking">位</span></h1>
+    <h1 class="rank fourth">4<span class="ranking">位</span></h1>
+    <h1 class="rank fifth">5<span class="ranking">位</span></h1>
+  </div>
 
-<% @player_ranks.each.with_index(1) do |player, rank| %>
-    第<%= rank %>位
-    <% if player.image_icon.attached? %>
-      <%= image_tag player.image_icon, size: "60x60" %>
-    <% else %>
-      <%= image_tag '勉強アイコン2.jpeg', size: "60x60" %>
+  <div class="player-icon-name">
+    <% @player_ranks.each.with_index(1) do |player| %>
+      <div class="icon-name">
+        <% if player.image_icon.attached? %>
+          <%= image_tag player.image_icon, size: "60x60", class: 'icon-circle' %>
+        <% else %>
+          <%= image_tag '勉強アイコン2.jpeg', size: "60x60", class: 'icon-circle' %>
+        <% end %>
+        <h3 class="player-name"><%= player.player_name %></h3>
     <% end %>
-    <%= player.player_name %>
-<% end%>
+    </div>
+  </div>
+</div>
