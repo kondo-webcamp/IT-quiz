@@ -1,29 +1,30 @@
-⑩マイページ＆編集(players/edit)
-
-<%= form_with model: @player,url: user_player_path(@player.id), method: :patch, local: true do |f| %>
-  <% if @player.image_icon.attached? %>
-    <%= image_tag @player.image_icon, size: "100x100" %>
-  <% else %>
-    <%= image_tag '勉強アイコン2', size: "100x100" %>
-  <% end %>
-　<div>
-　  <%= f.file_field :image_icon, placeholder: "プロフィール画像", accept: "image/*" %>
+<div class="mypage">
+  <div class="icon-edit">
+  <%= form_with model: @player,url: user_player_path(@player.id), method: :patch, local: true do |f| %>
+    <% if @player.image_icon.attached? %>
+      <%= image_tag @player.image_icon, size: "200x200", class: 'icon-circle' %>
+    <% else %>
+      <%= image_tag '勉強アイコン2', size: "200x200", class: 'icon-circle' %>
+    <% end %>
+　  <div class="image-icon"><%= f.file_field :image_icon, placeholder: "プロフィール画像", accept: "image/*" %></div>
 　</div>
 
-  <div>
-    <%= f.label :'ユーザーネーム' %>
-    <%= f.text_field :player_name %>
-  </div>
+  <div class="player-edit">
+    <div>
+      <%= f.label :'ユーザーネーム' %>
+      <%= f.text_field :player_name %>
+    </div>
 
-  <div>
-    <%= f.label :'メールアドレス' %>
-    <%= f.email_field :email, placeholder: "sample@sample.com", autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="player-email">
+      <%= f.label :'メールアドレス' %>
+      <%= f.email_field :email, placeholder: "sample@sample.com", autofocus: true, autocomplete: "email" %>
+    </div>
 
-  <div>
-    <%= f.text_field :introduction, placeholder: "〇〇勉強中！、趣味は〇〇など" %>
+    <div>
+      <%= f.text_area :introduction, placeholder: "〇〇勉強中！、趣味は〇〇など", :size=>"60x6" %>
+    </div>
   </div>
-
-  <%= f.submit '変更を保存' %>
+</div>
+  <div class="edit-button"><%= f.submit '変更を保存', class: 'quiz-new-button' %></div>
 
 <% end %>
