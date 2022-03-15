@@ -29,6 +29,14 @@ header {
   font-size: 20px;
 }
 
+.header-link {
+  text-decoration: none;
+  background-color: #9999FF;
+  border-radius: 50%;
+  padding: 18px;
+  color: white;
+}
+
 .admin-header {
   text-decoration: none;
   color: black;
@@ -45,7 +53,7 @@ ul {
 }
 
 li {
-  margin: 0 0 0 50px;
+  margin: 0 0 0 70px;
   font-size: 14px;
 }
 
@@ -139,4 +147,61 @@ li {
   background-color: white;
   padding: 6px;
   border-radius: 8px;
+}
+
+.user-header {
+  border-bottom: 3px solid #DCC2FF;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+.gear {
+  font-size: 2em;
+  position: fixed;
+  right: 30px;
+  bottom: 70px;
+}
+
+.faq-link {
+  position: fixed;
+  right: 100px;
+  text-decoration: none;
+  background-color: #9999FF;
+  border-radius: 50%;
+  padding: 18px;
+  color: white;
+}
+
+.challenge {
+  height: 50px;
+  width: 200px;
+  background-color: #6699FF;
+  display: block;
+  margin: 12em auto;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+}
+
+.challenge:hover {
+  background-color: #FFF;
+  color: black;
+  box-shadow: 0px 15px 20px rgba(227, 204, 255, 0.4);
+  transform: translateY(-7px);
+}
+
+/*フッター*/
+footer {
+  height: 50px;
+  width: 100%;
+  background-color: #DCC2FF;
+  text-align: center;
+  line-height: 50px;
+  bottom: 0;
+  position: fixed;
 }
