@@ -4,22 +4,13 @@
 .admin-player-index{
   display: flex;
   margin: 12px 0;
+  border-bottom: 2px solid #C0C0C0;
 }
 
 .admin-players-title{
-  width: 40%;
-}
-
-.admin-players-name{
-  width: 40%;
-  text-align: center;
+  width: 50%;
 }
 
 .players-email{
-  width: 60%;
-}
-
-.player-email{
-  width: 60%;
-  text-align: center;
+  width: 50%;
 }

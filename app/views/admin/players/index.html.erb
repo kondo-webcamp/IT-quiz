@@ -3,13 +3,13 @@
 
   <div class="quiz-index">
     <div class="admin-player-index">
-      <h5 class="admin-players-title">ユーザーネーム</h5>
-      <h5 class="players-email">メールアドレス</h5>
+      <h4 class="admin-players-title">ユーザーネーム</h4>
+      <h4 class="players-email">メールアドレス</h4>
     </div>
     <% @players.each do |player|%>
       <div class="admin-player-index">
-        <div class="admin-players-name"><%= player.player_name %></div>
-        <div class="player-email"><%= player.email %></div>
+        <div class="admin-players-title"><%= player.player_name %></div>
+        <div class="players-email"><%= player.email %></div>
       </div>
     <% end %>
   </div>
