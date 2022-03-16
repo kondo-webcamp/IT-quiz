@@ -162,6 +162,7 @@ li {
   right: 30px;
   bottom: 30px;
   color: black;
+  z-index: 10;
 }
 
 .faq-link {
@@ -208,11 +209,16 @@ li {
   background-position: bottom 10% right 20%;
 }
 
-.overview {
+.overview-block {
   width: 100%;
-  display: inline-block;
   text-align: center;
-  margin: 7em auto;
+  padding-top: 7em;
+}
+
+.overview {
+  background: linear-gradient(#fff 70%, #CCCCFF 0%);
+  display: inline;
+  font-size: 18px;
 }
 
 /*フッター*/
