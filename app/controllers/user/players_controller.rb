@@ -6,7 +6,6 @@ class User::PlayersController < ApplicationController
   def update
     @player = Player.find(params[:id])
     @player.update(player_params)
-    flash[:notice] = "変更しました"
     redirect_to request.referer
   end
 
