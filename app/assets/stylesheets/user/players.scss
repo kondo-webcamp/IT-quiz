@@ -2,12 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .player-ranking {
-  margin-top: 50px;
   display: flex;
 }
 
+.comment {
+  width: 100%;
+  background-color: #FFFFBB;
+  text-align: center;
+  margin-top: 30px;
+  border-bottom: 5px ridge #FFFF66;
+}
+
 .number {
-  width: 40%;
+  width: 45%;
   text-align: right;
   font-size: 24px;
   padding-right: 30px;
@@ -40,7 +47,7 @@
 }
 
 .player-icon-name {
-  width: 60%;
+  width: 55%;
   padding-left: 40px;
 }
 
