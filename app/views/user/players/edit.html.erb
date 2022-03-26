@@ -4,7 +4,7 @@
         <% if @player.image_icon.attached? %>
           <%= image_tag @player.image_icon, size: "200x200", class: 'icon-circle' %>
         <% else %>
-          <%= image_tag '勉強アイコン2', size: "200x200", class: 'icon-circle' %>
+          <%= image_tag 'profile', size: "200x200", class: 'icon-circle' %>
         <% end %>
     　  <div class="image-icon"><%= f.file_field :image_icon, accept: "image/*" %></div>
   　</div>

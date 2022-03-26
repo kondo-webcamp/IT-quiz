@@ -20,7 +20,7 @@
         <% if player.image_icon.attached? %>
           <%= image_tag player.image_icon, size: "60x60", class: 'icon-circle' %>
         <% else %>
-          <%= image_tag '勉強アイコン2.jpeg', size: "60x60", class: 'icon-circle' %>
+          <%= image_tag 'profile', size: "60x60", class: 'icon-circle' %>
         <% end %>
         <h3 class="player-name"><%= player.player_name %></h3>
       </div>
