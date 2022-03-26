@@ -2,7 +2,7 @@
     <div class="icon-edit">
     <%= form_with model: @player,url: user_player_path(@player.id), method: :patch, local: true do |f| %>
         <% if @player.image_icon.attached? %>
-          <%= image_tag 'profile', size: "200x200", class: 'icon-circle' %>
+          <%= image_tag @player.image_icon, size: "200x200", class: 'icon-circle' %>
         <% else %>
           <%= image_tag 'profile', size: "200x200", class: 'icon-circle' %>
         <% end %>
