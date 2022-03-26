@@ -1,4 +1,5 @@
 class User::QuizzesController < ApplicationController
+  before_action :authenticate_player!
   def index
      quiz_all_list = Quiz.all.pluck(:id) # quiz_all_list = ["1","2","3"...]
     if params[:count]
