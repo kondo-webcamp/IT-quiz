@@ -109,4 +109,18 @@
     font-size: 100px;
     width: 100%;
     text-align: center;
+    animation-name: scoreAnime;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes scoreAnime{
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
