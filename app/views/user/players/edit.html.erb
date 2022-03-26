@@ -1,6 +1,6 @@
+<%= form_with model: @player,url: user_player_path(@player.id), method: :patch, local: true do |f| %>
   <div class="mypage">
     <div class="icon-edit">
-    <%= form_with model: @player,url: user_player_path(@player.id), method: :patch, local: true do |f| %>
         <% if @player.image_icon.attached? %>
           <%= image_tag @player.image_icon, size: "200x200", class: 'icon-circle' %>
         <% else %>
@@ -26,4 +26,4 @@
     </div>
   </div>
     <div class="edit-button"><%= f.submit '変更を保存', class: 'quiz-new-button' %></div>
-  <% end %>
+<% end %>
